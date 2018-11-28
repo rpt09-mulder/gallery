@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <title>Photo Service</title>
+</head>
+<body>
+  <div id="photo-service"></div>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="http://localhost:3000/app.js"></script>
+  <script>
+    ReactDOM.render(
+      React.createElement(PhotoService),
+      document.getElementById('photo-service')
+    );
+  </script>
+</body>
+</html>

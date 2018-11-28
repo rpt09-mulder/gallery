@@ -1,0 +1,173 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+
+/* PHOTO GRID */
+
+.grid-container {
+  display:grid;
+  /* align-items: center; */
+  background-color: #000;
+  width: 100%;
+  height: 592px;
+  grid-gap: 2px;
+  grid-template-areas:
+    "primary primary secondary-upper-left secondary-upper-right"
+    "primary primary secondary-bottom-left secondary-bottom-right"
+}
+
+.photo-1 {
+  grid-area: primary;
+  background-color: #ff0000;
+}
+
+.photo-2 {
+  grid-area: secondary-upper-left;
+  background-color: #ffff00;
+}
+
+.photo-3 {
+  grid-area: secondary-upper-right;
+  background-color: #00ff00;
+}
+
+.photo-4 {
+  grid-area: secondary-bottom-left;
+  background-color: #ff00ff;
+}
+
+.photo-5 {
+  grid-area: secondary-bottom-right;
+  background-color: #dddddd;
+}
+
+.photo {
+  display: inline-block !important;
+  left: 0px !important;
+  width:100%;
+}
+
+.cropped-photo {
+  overflow:hidden;
+  position: relative !important;
+}
+
+
+/* CAROUSEL */
+
+#carousel {
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:99;
+}
+
+#carousel-main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.carousel-arrow-left {
+
+}
+
+.carousel-arrow-right {
+  
+}
+
+
+
+
+/* MEDIA QUERIES 
+
+Breakpoints
+=================================
+Desktop: 1128px and above
+Tablet: between 744 & 1127px
+Phone: 743 and below
+
+*/
+
+
+/* Desktop */
+@media (min-width: 1128px) {
+  body {
+    background-color: #000;
+  }
+}
+
+
+/* Tablet */
+@media (max-width: 1127px) {
+  body {
+    background-color: #00ff00;
+  }
+
+  .grid-container {
+    display:grid;
+    background-color: #000;
+    width: 100%;
+    height: 592px;
+    grid-gap: 2px;
+    grid-template-areas:
+      "primary primary primary secondary-upper-left secondary-upper-left"
+      "primary primary primary secondary-bottom-left secondary-bottom-left"
+  }
+
+  #photo-3 {
+    display: none;
+  }
+
+  #photo-5 {
+    display: none;
+  }
+}
+
+
+/* Phone */
+@media (max-width: 743px) {
+  body {
+    background-color: #ffff00;
+  }
+
+  .grid-container {
+    display:grid;
+    background-color: #000;
+    width: 100%;
+    height: 592px;
+    grid-gap: 2px;
+    grid-template-areas:
+      "primary primary primary primary primary"
+      "primary primary primary primary primary"
+  }
+
+  #photo-2 {
+    display: none;
+  }
+  
+  #photo-3 {
+    display: none;
+  }
+
+  #photo-4 {
+    display: none;
+  }
+
+  #photo-5 {
+    display: none;
+  }
+}
+
+
+/* 
+Breakpoints
+=================================
+Desktop: 1128px and above
+Tablet: between 744 & 1127px
+Phone: 743 and below
+*/
