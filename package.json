@@ -20,6 +20,8 @@
     "babel-preset-react": "^6.24.1",
     "express": "^4.16.2",
     "jest": "^22.3.0",
+    "mongod": "^2.0.0",
+    "mongoose": "^5.3.14",
     "morgan": "^1.9.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
