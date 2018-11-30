@@ -13,11 +13,10 @@ const db = mongoose.model('Property');
 // Helpers to generate 100 records
 let generateProperties = (qty) => {
   const properties = [];
-  for (let i = 0; i < qty; i++) {
-    const id = generateRandomId();
+  for (let i = 1; i < 101; i++) {
     const photos = generatePhotos(1);
     const property = {
-      id:  '' + id,
+      id:  '' + i,
       photos: photos
     }
     properties.push(property)
