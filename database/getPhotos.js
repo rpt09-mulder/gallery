@@ -6,6 +6,7 @@ async function getHomes() {
 }
 
 getHomes().then((data) => {
-  console.log(data)
+  const homesArray = data.toString().split("\n");
+  console.log(homesArray);
 })
 
