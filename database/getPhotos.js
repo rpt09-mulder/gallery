@@ -10,15 +10,18 @@ async function getHomes() {
 getHomes().then((data) => {
   const homesArray = data.toString().split("\n");
   async function downloadImages() {
-    for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < homesArray.length; i++) {
+      const options = {
+        url: homesArray[i],
+        dest: `${__dirname}/downloads`                  
+      }
       try {
-        await download.image(homesArray[i], `${__dirname}/downloads`);
+        await download.image(options);
       } catch (e) {
         console.error(e)
       }
     }
   }
-
   downloadImages();
 })
 
