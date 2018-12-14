@@ -24,6 +24,6 @@ coverage
 build/
 dist/
 
-# Images
-database/downloads
 
+database/downloads
+*.JPG
