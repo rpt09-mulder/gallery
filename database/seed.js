@@ -22,7 +22,7 @@ async function generateProperties(qty) {
   try {
     const properties = [];
     for (let i = 1; i < 101; i++) {
-      const photos = await generatePhotos(1);
+      const photos = await generatePhotos(5);
       const property = {
         id: '' + i,
         photos: photos
