@@ -41,6 +41,7 @@ async function generatePhotos(qty) {
   try {
     const photos = [];
     for (let i = 0; i < qty; i++) {
+      //START HERE, chaning the location below to use the new utils.getFilename function to use the real s3 locations
       const location = await utils.getFilename(`${__dirname}/downloads`);
       console.log('LOCATION:', location)
       const newPhoto = {
