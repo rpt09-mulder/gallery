@@ -4,6 +4,8 @@ const readFile = Promise.promisify(require("fs").readFile);
 const utils = require('./dbUtils.js');
 const _ = require('lodash');
 
+const prodBucket = 'https://s3.us-east-2.amazonaws.com/elasticbeanstalk-us-east-2-785620446758/property_images/';
+
 mongoose.connect('mongodb://localhost/gallery');
 
 const Schema = mongoose.Schema;
@@ -39,7 +41,7 @@ async function generatePhotos(qty) {
   try {
     const photos = [];
     for (let i = 0; i < qty; i++) {
-      const location = await utils.randomImage(`${__dirname}/homes.txt`);
+      const location = await utils.getFilename(`${__dirname}/downloads`);
       console.log('LOCATION:', location)
       const newPhoto = {
         id: '' + _.random(10000, 90000),
