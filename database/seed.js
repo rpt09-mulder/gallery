@@ -1,12 +1,13 @@
+require('dotenv').config()
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const readFile = Promise.promisify(require("fs").readFile);
 const utils = require('./dbUtils.js');
 const _ = require('lodash');
 
-const productionBucket = 'https://s3.us-east-2.amazonaws.com/elasticbeanstalk-us-east-2-785620446758/property_images/';
+const productionBucket = `https://s3.us-east-2.amazonaws.com/elasticbeanstalk-us-east-2-785620446758/property_images/`;
 
-mongoose.connect('mongodb://localhost/gallery');
+mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}${process.env.DB_HOST}`);
 
 const Schema = mongoose.Schema;
 const PropertySchema = new Schema({
@@ -63,3 +64,22 @@ async function insertProperties() {
 }
 
 insertProperties();
+
+
+/*
+
+
+{
+    "_id": "firebnb-photos.firebnb-photos",
+    "user": "firebnb-photos",
+    "db": "firebnb-photos",
+    "roles": [
+        {
+            "role": "dbOwner",
+            "db": "firebnb-photos"
+        }
+    ]
+}
+
+
+*/

@@ -27,3 +27,4 @@ dist/
 
 database/downloads
 *.JPG
+.env
