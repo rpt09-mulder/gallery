@@ -11,10 +11,11 @@ async function randomImage(dir) {
 
 async function getFilename(dir) {
   const files = await readDir(dir);
-  console.log(files)
+  const file = files[_.random(0, files.length - 1)]
+  return file;
 }
 
-getFilename(`${__dirname}/downloads`);
+getFilename(`${__dirname}/downloads`)
 
 
 module.exports = {

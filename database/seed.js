@@ -4,15 +4,15 @@ const readFile = Promise.promisify(require("fs").readFile);
 const utils = require('./dbUtils.js');
 const _ = require('lodash');
 
-const prodBucket = 'https://s3.us-east-2.amazonaws.com/elasticbeanstalk-us-east-2-785620446758/property_images/';
+const productionBucket = 'https://s3.us-east-2.amazonaws.com/elasticbeanstalk-us-east-2-785620446758/property_images/';
 
 mongoose.connect('mongodb://localhost/gallery');
 
 const Schema = mongoose.Schema;
 const PropertySchema = new Schema({
-  id: String,
+  id: Number,
   photos: [{
-    id: String,
+    id: Number,
     location: String
   }]
 });
@@ -26,7 +26,7 @@ async function generateProperties(qty) {
     for (let i = 1; i < 101; i++) {
       const photos = await generatePhotos(5);
       const property = {
-        id: '' + i,
+        id: i,
         photos: photos
       }
       properties.push(property)
@@ -41,8 +41,7 @@ async function generatePhotos(qty) {
   try {
     const photos = [];
     for (let i = 0; i < qty; i++) {
-      //START HERE, chaning the location below to use the new utils.getFilename function to use the real s3 locations
-      const location = await utils.getFilename(`${__dirname}/downloads`);
+      const location = productionBucket + await utils.getFilename(`${__dirname}/downloads`);
       console.log('LOCATION:', location)
       const newPhoto = {
         id: '' + _.random(10000, 90000),
