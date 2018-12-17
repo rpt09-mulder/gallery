@@ -64,22 +64,3 @@ async function insertProperties() {
 }
 
 insertProperties();
-
-
-/*
-
-
-{
-    "_id": "firebnb-photos.firebnb-photos",
-    "user": "firebnb-photos",
-    "db": "firebnb-photos",
-    "roles": [
-        {
-            "role": "dbOwner",
-            "db": "firebnb-photos"
-        }
-    ]
-}
-
-
-*/

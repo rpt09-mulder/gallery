@@ -1,6 +1,8 @@
 const Promise = require('bluebird');
+
 const readFile = Promise.promisify(require('fs').readFile);
 const readDir = Promise.promisify(require('fs').readdir);
+
 const _ = require('lodash');
 
 async function randomImage(dir) {
@@ -16,7 +18,6 @@ async function getFilename(dir) {
 }
 
 getFilename(`${__dirname}/downloads`)
-
 
 module.exports = {
   randomImage: randomImage,

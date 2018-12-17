@@ -24,7 +24,7 @@ coverage
 build/
 dist/
 
-
 database/downloads
+
 *.JPG
 .env
