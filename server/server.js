@@ -17,13 +17,6 @@ app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
 });
 
-// app.get('/photos/:id', (req, res) => {
-//   dbUtils.queryPhotos();
-//   res.json({
-//     photo1: req.params.id
-//   })
-// });
-
 app.get('/photos/:id', (req, res) => {
   Models.Property.find({id: req.params.id}, (err, property) => {
     if (err) {
