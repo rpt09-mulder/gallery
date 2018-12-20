@@ -13,5 +13,5 @@ const Property = mongoose.model('Property', PropertySchema);
 const PropertyModel = mongoose.model('Property');
 
 module.exports = {
-  PropertyModel: PropertyModel
+  Property: PropertyModel
 };
