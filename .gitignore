@@ -31,5 +31,9 @@ database/downloads
 =======
 
 *.JPG
+<<<<<<< HEAD
 >>>>>>> 46680a5ed5f48f54566dd648d36b3e03b20ebd56
 .env
+=======
+.env
+>>>>>>> 896d34af512ff185bc01fe12b4831137f4217655
