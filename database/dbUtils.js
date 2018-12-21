@@ -16,9 +16,5 @@ module.exports = {
     const files = await readDir(dir);
     const file = files[_.random(0, files.length - 1)]
     return file;
-  },
-
-  queryPhotos: async function queryPhotos() {
-    console.log('QUERIED PHOTOS')
   }
 }
