@@ -28,12 +28,42 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    let id;
+    window.location.pathname !== '/' ? id = window.location.pathname : id = '1';
+
+    fetch(`/photos${id}`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((property) => {
+      const photos = property.data[0].photos;
+      console.log(photos);
+      this.setState({photos: {
+        photo1: {
+          url: photos[0].location
+        },
+        photo2: {
+          url: photos[1].location
+        },
+        photo3: {
+          url: photos[2].location
+        },
+        photo4: {
+          url: photos[3].location
+        },
+        photo5: {
+          url: photos[4].location
+        }
+      }})
+    })
+  }
+
   toggleCarousel() {
     this.state.carouselActive ? this.setState({carouselActive: false}) : this.setState({carouselActive: true});
   }
 
   render() {
-
     if(this.state.carouselActive) {
       return (
         <div>
