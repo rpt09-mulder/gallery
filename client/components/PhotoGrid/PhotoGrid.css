@@ -6,32 +6,28 @@
   grid-gap: 2px;
   grid-template-areas:
     "primary primary secondary-upper-left secondary-upper-right"
-    "primary primary secondary-bottom-left secondary-bottom-right"
+    "primary primary secondary-bottom-left secondary-bottom-right";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .photo-1 {
   grid-area: primary;
-  background-color: #ff0000;
 }
 
 .photo-2 {
   grid-area: secondary-upper-left;
-  background-color: #ffff00;
 }
 
 .photo-3 {
   grid-area: secondary-upper-right;
-  background-color: #00ff00;
 }
 
 .photo-4 {
   grid-area: secondary-bottom-left;
-  background-color: #ff00ff;
 }
 
 .photo-5 {
   grid-area: secondary-bottom-right;
-  background-color: #dddddd;
 }
 
 .photo {

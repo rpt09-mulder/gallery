@@ -9,19 +9,19 @@ class App extends React.Component {
     this.state = {
       photos: {
         photo1: {
-          url: 'https://picsum.photos/800/800/?image=172'
+          url: ''
         },
         photo2: {
-          url: 'https://picsum.photos/800/800/?image=271'
+          url: ''
         },
         photo3: {
-          url: 'https://picsum.photos/800/800/?image=370'
+          url: ''
         },
         photo4: {
-          url: 'https://picsum.photos/800/800/?image=473'
+          url: ''
         },
         photo5: {
-          url: 'https://picsum.photos/800/800/?image=577'
+          url: ''
         },
       },
       carouselActive: false
@@ -38,7 +38,6 @@ class App extends React.Component {
     })
     .then((property) => {
       const photos = property.data[0].photos;
-      console.log(photos);
       this.setState({photos: {
         photo1: {
           url: photos[0].location
