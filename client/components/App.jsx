@@ -1,9 +1,10 @@
 import React from 'react';
 import PhotoGrid from './PhotoGrid/PhotoGrid.jsx';
 import Carousel from './Carousel/Carousel.jsx';
+import Nav from './Nav/Nav.jsx';
 import './App.css';
 
-const serviceLocation = 'http://photos.urvjp33d4m.us-west-2.elasticbeanstalk.com'; 
+const serviceLocation = 'http://photos.urvjp33d4m.us-west-2.elasticbeanstalk.com';
 
 class App extends React.Component {
   constructor() {
@@ -35,46 +36,58 @@ class App extends React.Component {
     window.location.pathname !== '/' ? id = window.location.pathname : id = '/1';
 
     fetch(`${serviceLocation}/photos${id}`)
-    .then((res) => {
-      return res.json();
-    })
-    .then((property) => {
-      const photos = property.data[0].photos;
-      this.setState({photos: {
-        photo1: {
-          url: photos[0].location
-        },
-        photo2: {
-          url: photos[1].location
-        },
-        photo3: {
-          url: photos[2].location
-        },
-        photo4: {
-          url: photos[3].location
-        },
-        photo5: {
-          url: photos[4].location
-        }
-      }})
-    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((property) => {
+        const photos = property.data[0].photos;
+        this.setState({
+          photos: {
+            photo1: {
+              url: photos[0].location
+            },
+            photo2: {
+              url: photos[1].location
+            },
+            photo3: {
+              url: photos[2].location
+            },
+            photo4: {
+              url: photos[3].location
+            },
+            photo5: {
+              url: photos[4].location
+            }
+          }
+        })
+      })
   }
 
   toggleCarousel() {
-    this.state.carouselActive ? this.setState({carouselActive: false}) : this.setState({carouselActive: true});
+    this.state.carouselActive ? this.setState({ carouselActive: false }) : this.setState({ carouselActive: true });
   }
 
   render() {
-    if(this.state.carouselActive) {
+    if (this.state.carouselActive) {
       return (
         <div>
-          <Carousel photos={this.state.photos} toggleCarousel={this.toggleCarousel.bind(this)}/>
+          <div>
+            <Nav />
+          </div>
+          <div>
+            <Carousel photos={this.state.photos} toggleCarousel={this.toggleCarousel.bind(this)} />
+          </div>
         </div>
       )
     } else {
       return (
         <div>
-          <PhotoGrid photos={this.state.photos} toggleCarousel={this.toggleCarousel.bind(this)} />
+          <div>
+            <Nav />
+          </div>
+          <div>
+            <PhotoGrid photos={this.state.photos} toggleCarousel={this.toggleCarousel.bind(this)} />
+          </div>
         </div>
       )
     }

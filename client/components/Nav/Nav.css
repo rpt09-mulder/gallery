@@ -1,0 +1,20 @@
+.nav-grid {
+  display: flex;
+  height: 80px;
+  padding: 0 15px 0 15px;
+}
+.col {
+  flex: 0 0 500px;
+}
+
+.logo {
+  background-image: url("https://s3.us-east-2.amazonaws.com/elasticbeanstalk-us-east-2-785620446758/property_images/logo-png.png");
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: 34px 34px;
+}
+
+.search {
+  background-color: #00ff00;
+
+}
