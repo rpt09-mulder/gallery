@@ -1,20 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700');
+
 .nav-grid {
   display: flex;
+  align-items: center;
   height: 80px;
-  padding: 0 15px 0 15px;
+  padding: 0 25px 0 25px;
 }
 .col {
-  flex: 0 0 500px;
+  flex: 1;
 }
 
 .logo {
   background-image: url("https://s3.us-east-2.amazonaws.com/elasticbeanstalk-us-east-2-785620446758/property_images/logo-png.png");
   background-repeat: no-repeat;
   background-position: center; 
-  background-size: 34px 34px;
+  background-size: 30px 30px;
+  flex-basis: 30px;
+  height: 100%;
 }
 
 .search {
-  background-color: #00ff00;
+  padding-left: 25px;
+  flex-basis: 1;
+}
 
+.search input {
+  width: 385px;
+  height: 48px;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  border: 1px solid #EBEBEB !important;
+  padding: 0 15px 0 15px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #484848;
+}
+
+.search input:focus {
+  outline-width: 0;
+}
+
+.nav {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.nav #menu:last-child {
+  padding-right: 0;
+}
+
+.nav #menu li {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #484848;
+  display:inline;
+  padding-right: 30px
 }
