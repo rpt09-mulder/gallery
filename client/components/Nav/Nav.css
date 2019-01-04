@@ -46,7 +46,7 @@
   text-align: right;
 }
 
-.nav #menu:last-child {
+.nav #menu li:last-child {
   padding-right: 0;
 }
 

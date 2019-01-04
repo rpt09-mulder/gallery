@@ -7,7 +7,7 @@ const Nav = () => {
     <div className="nav-grid">
       <div className="nav-col logo"></div>
       <div className="nav-col search">
-        <input type="text" value="search" />
+        <input type="text" placeholder="search" />
       </div>
       <div className="nav-col nav">
         <ul id="menu">
