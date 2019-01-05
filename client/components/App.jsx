@@ -65,8 +65,8 @@ class App extends React.Component {
   }
 
   toggleCarousel(e) {
-    const clickedId = e.target.id.slice(5)
-    this.state.carouselActive ? this.setState({ carouselActive: false, clicked: 1 }) : this.setState({ carouselActive: true, clicked: parseInt(clickedId) });
+    const clickedId = parseInt(e.target.id.slice(5)) - 1;
+    this.state.carouselActive ? this.setState({ carouselActive: false, clicked: 1 }) : this.setState({ carouselActive: true, clicked: clickedId });
   }
 
   render() {

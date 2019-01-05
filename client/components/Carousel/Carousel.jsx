@@ -22,7 +22,7 @@ class Carousel extends React.Component {
   }
 
   slideHandler(e) {
-    // Aliases for readability and economy =================
+    // Aliases for readability =============================
     const photos = this.state.photos;
     const activePhoto = this.state.activePhoto;
     // =====================================================
